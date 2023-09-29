@@ -12,7 +12,7 @@ Human pose estimation in videos has wide-ranging practical applications across v
 
 ## Results
 ### - 2D Pose Estimation
-![2D results](figs/result_2D.png)
+<img src="figs/result_2D.png" alt="2D results" width="800"/>
 
 **Visualization on Sub-JHMDB:**
 
@@ -20,7 +20,7 @@ Human pose estimation in videos has wide-ranging practical applications across v
 
 
 ### - 3D Pose Estimation
-![2D results](figs/result_3D.png)
+<img src="figs/result_3D.png" alt="3D results" width="400"/>
 
 **Visualization on AIST++:**
 ![visualize of AIST++ 3D](figs/aist_3D_jazz_trim.gif) 
@@ -28,7 +28,7 @@ Human pose estimation in videos has wide-ranging practical applications across v
 
 
 ### - Short-term Motion Prediction
-![short-term prediction results](figs/result_prediction.png)
+<img src="figs/result_prediction.png" alt="short-term prediction results" width="400"/>
 
 
 ## Citation
