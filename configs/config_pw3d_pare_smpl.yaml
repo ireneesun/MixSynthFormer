@@ -1,0 +1,61 @@
+DEVICE : 'cuda'
+SEED_VALUE : 4321
+LOGDIR : ''
+EXP_NAME : 'pw3d_pare_smpl'
+DEBUG : True
+OUTPUT_DIR : 'results'
+
+DATASET_NAME : 'pw3d'
+ESTIMATOR : 'pare'
+BODY_REPRESENTATION : 'smpl'
+SAMPLE_INTERVAL : 10
+
+SMPL_MODEL_DIR : "/data/smpl/"
+
+# CUDNN config
+CUDNN :
+  BENCHMARK : True
+  DETERMINISTIC : False
+  ENABLED : True
+
+# model config
+MODEL :
+  TYPE : 'network'
+  NAME : ''
+# sampling setting
+  SAMPLE_TYPE : 'uniform'
+  SLIDE_WINDOW_Q : 5
+  DROPOUT : 0.1
+
+  BLOCK_NUM: 4
+  EMBEDDING_DIMENSION: 64
+
+# training config
+TRAIN :
+  BATCH_SIZE : 256
+  WORKERS_NUM : 4
+  EPOCH : 100
+  LR : 0.001
+  LRDECAY : 0.97
+  RESUME : ''
+  VALIDATE : True
+  USE_SMPL_LOSS : False
+  USE_6D_SMPL : True
+
+  REF_ACC: 81.5
+
+
+# test config
+EVALUATE:
+  PRETRAINED : 'data/checkpoints/checkpoint.pth.tar'
+  ROOT_RELATIVE : True
+  SLIDE_WINDOW_STEP_Q : 1
+  INTERP : 'linear'
+  RELATIVE_IMPROVEMENT : False
+
+VIS:
+  INPUT_VIDEO_NUMBER : 143
+  INPUT_VIDEO_PATH : 'data/videos/'
+  OUTPUT_VIDEO_PATH : 'demo/'
+  START : 0
+  END : 1000

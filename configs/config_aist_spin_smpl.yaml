@@ -1,0 +1,61 @@
+DEVICE : 'cuda'
+SEED_VALUE : 4321
+LOGDIR : ''
+EXP_NAME : 'aist_spin_smpl'
+DEBUG : True
+OUTPUT_DIR : 'results'
+
+DATASET_NAME : 'aist'
+ESTIMATOR : 'spin'
+BODY_REPRESENTATION : 'smpl'
+SAMPLE_INTERVAL : 10
+
+SMPL_MODEL_DIR : "/data/smpl/"
+
+# CUDNN config
+CUDNN :
+  BENCHMARK : True
+  DETERMINISTIC : False
+  ENABLED : True
+
+# model config
+MODEL :
+  TYPE : 'network'
+  NAME : ''
+# sampling setting
+  SAMPLE_TYPE : 'uniform'
+  SLIDE_WINDOW_Q : 10
+  DROPOUT : 0.1
+
+  BLOCK_NUM: 5
+  EMBEDDING_DIMENSION: 128
+
+# training config
+TRAIN :
+  BATCH_SIZE : 512
+  WORKERS_NUM : 6
+  EPOCH : 100
+  LR : 0.001
+  LRDECAY : 0.97
+  RESUME : ''
+  VALIDATE : True
+  USE_SMPL_LOSS : False
+  USE_6D_SMPL : True
+
+  REF_ACC: 84.0
+
+
+# test config
+EVALUATE:
+  PRETRAINED : 'results/checkpoints/checkpoint.pth.tar'
+  ROOT_RELATIVE : True
+  SLIDE_WINDOW_STEP_Q : 1
+  INTERP : 'linear'
+  RELATIVE_IMPROVEMENT : False
+
+VIS:
+  INPUT_VIDEO_NUMBER : 143
+  INPUT_VIDEO_PATH : '/data2/yrsun/aist'
+  OUTPUT_VIDEO_PATH : 'demo/'
+  START : 0
+  END : 1000
